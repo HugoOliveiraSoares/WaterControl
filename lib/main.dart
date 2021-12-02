@@ -1,3 +1,4 @@
+import 'cadastro.dart';
 import 'login_page.dart';
 import 'historicoDiario.dart';
 import 'home.dart';
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.LOGIN,
       routes: {
-        Routes.LOGIN: (context) => CadastroPage(),
+        Routes.LOGIN: (context) => LoginPage(),
         Routes.HOME: (context) => Home(),
         Routes.REGISTRO: (context) => RegistroPage(),
         Routes.HISTORICO: (context) => Historico(),
+        Routes.CADASTRO: (context) => CadastroPage(),
       },
     );
   }

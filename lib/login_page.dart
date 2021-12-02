@@ -1,18 +1,17 @@
-import 'package:trabalhomobile/registroBD.dart';
 import 'package:trabalhomobile/usuario.dart';
 import 'package:trabalhomobile/routes.dart';
 import 'package:trabalhomobile/usuarioBD.dart';
 import 'package:trabalhomobile/validation.dart';
 import 'package:flutter/material.dart';
 
-class CadastroPage extends StatefulWidget {
-  CadastroPage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key? key}) : super(key: key);
 
   @override
-  _CadastroPageState createState() => _CadastroPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _CadastroPageState extends State<CadastroPage> {
+class _LoginPageState extends State<LoginPage> {
   String email = '';
   String senha = '';
 
@@ -86,7 +85,9 @@ class _CadastroPageState extends State<CadastroPage> {
                       color: Colors.black,
                     ),
                   ),
-                  onTap: () {}, // Vai para a tela de esqueceu a senha
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(Routes.CADASTRO);
+                  }, // Vai para a tela de esqueceu a senha
                 ),
               ),
               ElevatedButton(
@@ -120,7 +121,7 @@ class _CadastroPageState extends State<CadastroPage> {
 
   void _onSubmit(BuildContext inContext) async {
     UsuarioBD db = UsuarioBD();
-    Usuario usuario = Usuario(null, email, senha);
+    Usuario usuario = Usuario(email: email, senha: senha);
     Validation validator = Validation(usuario, inContext, db);
 
     if (await validator.valida()) {

@@ -17,9 +17,6 @@ class Validation {
         isCampoSenha(this.usuario.senha)) {
       Usuario? futureUsuario = await db.getUsuario(usuario);
 
-      // bool result = this.usuario.email == 'teste@teste.com' &&
-      //     this.usuario.senha == '1234';
-
       if (futureUsuario != null) {
         if (futureUsuario.senha == this.usuario.senha) {
           result = true;
@@ -33,21 +30,38 @@ class Validation {
     return result;
   }
 
+  Future<bool> validaCadastro() async {
+    bool result = false;
+    if (isFormatoEmail(this.usuario.email) &&
+        isCampoSenha(this.usuario.senha) &&
+        isNome(this.usuario.nome) &&
+        isSobrenome(this.usuario.sobrenome)) {
+      await db.insertUsuario(usuario);
+      result = true;
+    } else {
+      mostraDialogo(
+          'Preencha corretamente os campos do formulário.', inContext);
+    }
+
+    return result;
+  }
+
   bool isFormatoEmail(String? email) {
-    if (email == null) {
+    if (email == null || email.isEmpty) {
       mostraDialogo('Entre com seu e-mail', inContext);
       return false;
     }
 
-    if (email.isEmpty) {
-      mostraDialogo('Entre com seu e-mail', inContext);
-      return false;
-    }
     if (!email.contains('@')) {
       mostraDialogo(
           'O email deve ser por exemplo seu-nome@mail.com', inContext);
       return false;
     }
+
+    if (!email.contains('.com')) {
+      mostraDialogo('O email deve conter o ".com"', inContext);
+    }
+
     if (email.length < 3) {
       mostraDialogo('E-mail em formato inadequado', inContext);
       return false;
@@ -56,17 +70,28 @@ class Validation {
   }
 
   bool isCampoSenha(String? senha) {
-    if (senha == null) {
-      mostraDialogo('Entre com sua senha', inContext);
-      return false;
-    }
-
-    if (senha.isEmpty) {
+    if (senha == null || senha.isEmpty) {
       mostraDialogo('Entre com sua senha', inContext);
       return false;
     }
     if (senha.length < 4) {
       mostraDialogo('A senha deve ter no mínimo 4 dígitos', inContext);
+      return false;
+    }
+    return true;
+  }
+
+  bool isNome(String? nome) {
+    if (nome == null || nome.isEmpty) {
+      mostraDialogo('Insira seu nome', inContext);
+      return false;
+    }
+    return true;
+  }
+
+  bool isSobrenome(String? sobrenome) {
+    if (sobrenome == null || sobrenome.isEmpty) {
+      mostraDialogo('Insira seu sobrenome', inContext);
       return false;
     }
     return true;

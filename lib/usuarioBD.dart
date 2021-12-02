@@ -57,11 +57,13 @@ class UsuarioBD {
   void _createDb(Database db, int newVersion) async {
     await db.execute("CREATE TABLE usuarios ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "nome TEXT,"
+        "sobrenome TEXT,"
         "email TEXT,"
         "senha TEXT"
         ");");
 
-    insertUsuario(Usuario(0, 'teste@teste.com', '1234'));
+    insertUsuario(Usuario(email: 'teste@teste.com', senha: '1234'));
   }
 
   void dropTable() async {

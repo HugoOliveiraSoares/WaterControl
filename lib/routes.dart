@@ -3,4 +3,5 @@ class Routes {
   static const HOME = '/home';
   static const REGISTRO = '/registro';
   static const HISTORICO = '/historico';
+  static const CADASTRO = '/cadastro';
 }
