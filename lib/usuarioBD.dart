@@ -62,8 +62,6 @@ class UsuarioBD {
         "email TEXT,"
         "senha TEXT"
         ");");
-
-    insertUsuario(Usuario(email: 'teste@teste.com', senha: '1234'));
   }
 
   void dropTable() async {

@@ -70,7 +70,7 @@ class _RegistroPageState extends State<RegistroPage> {
               ),
               Container(
                 child: Image.asset(
-                  'assets/images/Hidrometro.png',
+                  'assets/images/Hidrometro.jpg',
                   height: 400,
                 ),
               ),

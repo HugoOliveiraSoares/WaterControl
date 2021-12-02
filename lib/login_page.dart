@@ -27,10 +27,22 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
+                margin: EdgeInsetsDirectional.only(top: 10),
+                child: Text(
+                  'Water Control',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+              Container(
                 child: Image.asset(
                   'assets/images/torneira.png',
-                  width: 180,
-                  height: 180,
+                  width: 150,
+                  height: 150,
                 ),
                 margin: EdgeInsets.fromLTRB(10, 10, 10, 20),
               ),
@@ -115,13 +127,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Container(
-                height: 50,
-                width: 150,
+                margin: EdgeInsets.only(top: 30, left: 10, right: 10),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromRGBO(255, 255, 255, 1.0),
                     onPrimary: Colors.white,
-                    // padding: EdgeInsets.symmetric(horizontal: 105, vertical: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                       side: BorderSide(
@@ -132,7 +143,8 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.of(context).pushNamed(Routes.CADASTRO);
                   },
                   child: Text(
-                    'Cadastrar',
+                    'Não tem uma conta? \n Cadastre-se',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.black,
