@@ -4,4 +4,5 @@ class Routes {
   static const REGISTRO = '/registro';
   static const HISTORICO = '/historico';
   static const CADASTRO = '/cadastro';
+  static const DICAS = '/dicas';
 }

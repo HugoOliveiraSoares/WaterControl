@@ -69,8 +69,8 @@ class _RegistroPageState extends State<RegistroPage> {
                 },
               ),
               Container(
-                child: Image.network(
-                  "https://www.agenciaprimaz.com.br/wp-content/uploads/2020/10/Hidr%C3%B4metro.jpg",
+                child: Image.asset(
+                  'assets/images/Hidrometro.png',
                   height: 400,
                 ),
               ),

@@ -11,7 +11,7 @@ class Validation {
 
   Validation(this.usuario, this.inContext, this.db);
 
-  Future<bool> valida() async {
+  Future<bool> validaLogin() async {
     bool result = false;
     if (isFormatoEmail(this.usuario.email) &&
         isCampoSenha(this.usuario.senha)) {
@@ -22,7 +22,7 @@ class Validation {
           result = true;
         } else {
           result = false;
-          mostraDialogo('Email ou Senha Invalidos', inContext);
+          mostraDialogoErro('Email ou Senha Invalidos', inContext);
         }
       }
     }
@@ -39,7 +39,7 @@ class Validation {
       await db.insertUsuario(usuario);
       result = true;
     } else {
-      mostraDialogo(
+      mostraDialogoErro(
           'Preencha corretamente os campos do formulário.', inContext);
     }
 
@@ -48,22 +48,22 @@ class Validation {
 
   bool isFormatoEmail(String? email) {
     if (email == null || email.isEmpty) {
-      mostraDialogo('Entre com seu e-mail', inContext);
+      mostraDialogoErro('Entre com seu e-mail', inContext);
       return false;
     }
 
     if (!email.contains('@')) {
-      mostraDialogo(
+      mostraDialogoErro(
           'O email deve ser por exemplo seu-nome@mail.com', inContext);
       return false;
     }
 
     if (!email.contains('.com')) {
-      mostraDialogo('O email deve conter o ".com"', inContext);
+      mostraDialogoErro('O email deve conter o ".com"', inContext);
     }
 
     if (email.length < 3) {
-      mostraDialogo('E-mail em formato inadequado', inContext);
+      mostraDialogoErro('E-mail em formato inadequado', inContext);
       return false;
     }
     return true;
@@ -71,11 +71,11 @@ class Validation {
 
   bool isCampoSenha(String? senha) {
     if (senha == null || senha.isEmpty) {
-      mostraDialogo('Entre com sua senha', inContext);
+      mostraDialogoErro('Entre com sua senha', inContext);
       return false;
     }
     if (senha.length < 4) {
-      mostraDialogo('A senha deve ter no mínimo 4 dígitos', inContext);
+      mostraDialogoErro('A senha deve ter no mínimo 4 dígitos', inContext);
       return false;
     }
     return true;
@@ -83,7 +83,7 @@ class Validation {
 
   bool isNome(String? nome) {
     if (nome == null || nome.isEmpty) {
-      mostraDialogo('Insira seu nome', inContext);
+      mostraDialogoErro('Insira seu nome', inContext);
       return false;
     }
     return true;
@@ -91,7 +91,7 @@ class Validation {
 
   bool isSobrenome(String? sobrenome) {
     if (sobrenome == null || sobrenome.isEmpty) {
-      mostraDialogo('Insira seu sobrenome', inContext);
+      mostraDialogoErro('Insira seu sobrenome', inContext);
       return false;
     }
     return true;

@@ -85,30 +85,58 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.black,
                     ),
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushReplacementNamed(Routes.CADASTRO);
-                  }, // Vai para a tela de esqueceu a senha
+                  onTap: () {}, // Vai para a tela de esqueceu a senha
                 ),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromRGBO(255, 255, 255, 1.0),
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.symmetric(horizontal: 105, vertical: 20),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                    side: BorderSide(
-                        color: Color.fromRGBO(28, 150, 158, 1), width: 2),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(255, 255, 255, 1.0),
+                    onPrimary: Colors.white,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 105, vertical: 20),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      side: BorderSide(
+                          color: Color.fromRGBO(28, 150, 158, 1), width: 2),
+                    ),
+                  ),
+                  onPressed: () {
+                    _onSubmit(context);
+                  },
+                  child: Text(
+                    'Entrar',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                onPressed: () {
-                  _onSubmit(context);
-                },
-                child: Text(
-                  'Entrar',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
+              ),
+              Container(
+                height: 50,
+                width: 150,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(255, 255, 255, 1.0),
+                    onPrimary: Colors.white,
+                    // padding: EdgeInsets.symmetric(horizontal: 105, vertical: 20),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      side: BorderSide(
+                          color: Color.fromRGBO(28, 150, 158, 1), width: 2),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Routes.CADASTRO);
+                  },
+                  child: Text(
+                    'Cadastrar',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
@@ -124,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
     Usuario usuario = Usuario(email: email, senha: senha);
     Validation validator = Validation(usuario, inContext, db);
 
-    if (await validator.valida()) {
+    if (await validator.validaLogin()) {
       Navigator.of(inContext).pushReplacementNamed(Routes.HOME);
     }
   }

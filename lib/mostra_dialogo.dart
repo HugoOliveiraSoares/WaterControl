@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void mostraDialogo(String msg, BuildContext inContext) {
+void mostraDialogoErro(String msg, BuildContext inContext) {
   showDialog(
     context: inContext,
     barrierDismissible: false,

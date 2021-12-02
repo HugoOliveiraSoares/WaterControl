@@ -1,3 +1,5 @@
+import 'package:trabalhomobile/dicas.dart';
+
 import 'cadastro.dart';
 import 'login_page.dart';
 import 'historicoDiario.dart';
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         Routes.REGISTRO: (context) => RegistroPage(),
         Routes.HISTORICO: (context) => Historico(),
         Routes.CADASTRO: (context) => CadastroPage(),
+        Routes.DICAS: (context) => DicasClass(),
       },
     );
   }

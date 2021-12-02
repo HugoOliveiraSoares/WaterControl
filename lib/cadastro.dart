@@ -29,14 +29,16 @@ class _CadastroPageState extends State<CadastroPage> {
             child: Container(
           child: Column(
             children: [
-              Image.network(
-                "https://cdn-icons-png.flaticon.com/512/753/753210.png",
-                fit: BoxFit.fitWidth,
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Image.asset(
+                  'assets/images/cadastro.png',
+                  height: 200,
+                  width: 200,
+                ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(2, 20, 2, 20),
-              ),
-              Container(
+                margin: EdgeInsets.fromLTRB(20, 15, 20, 0),
                 padding: EdgeInsets.all(8),
                 child: TextFormField(
                   autofocus: true,
@@ -46,7 +48,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     labelText: 'Nome',
                     hintText: 'Insira seu nome',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(),
                     ),
                   ),
@@ -55,8 +57,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   },
                 ),
               ),
-              SizedBox(height: 20),
               Container(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 padding: EdgeInsets.all(8),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
@@ -65,7 +67,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     labelText: 'Sobrenome',
                     hintText: 'Insira seu sobrenome',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(),
                     ),
                   ),
@@ -74,8 +76,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   },
                 ),
               ),
-              SizedBox(height: 20),
               Container(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 padding: EdgeInsets.all(8),
                 child: TextFormField(
                   keyboardType: TextInputType.emailAddress,
@@ -84,7 +86,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     labelText: 'E-mail',
                     hintText: 'Digite seu e-mail',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(),
                     ),
                   ),
@@ -93,8 +95,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   },
                 ),
               ),
-              SizedBox(height: 20),
               Container(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 padding: EdgeInsets.all(8),
                 child: TextFormField(
                   keyboardType: TextInputType.number,
@@ -104,7 +106,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     labelText: 'Senha',
                     hintText: 'Crie sua senha para o app',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(15),
                         borderSide: BorderSide(
                             color: Color.fromRGBO(28, 150, 158, 1), width: 7)),
                   ),
@@ -116,8 +118,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   },
                 ),
               ),
-              SizedBox(height: 20),
               Container(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 20),
                 child: SizedBox(
                   width: double.infinity,
                   height: 60,
@@ -126,7 +128,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(28, 150, 158, 1),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       textStyle: TextStyle(
                         fontSize: 20,
