@@ -21,6 +21,7 @@ class _CadastroPageState extends State<CadastroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(21, 198, 237, 1),
         title: Text('Faça parte desse time! \n Economize também!'),
         centerTitle: true,
       ),
@@ -126,7 +127,7 @@ class _CadastroPageState extends State<CadastroPage> {
                   child: ElevatedButton(
                     child: Text('Cadastrar'),
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(28, 150, 158, 1),
+                      primary: Color.fromRGBO(21, 198, 237, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
