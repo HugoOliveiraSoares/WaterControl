@@ -1,11 +1,14 @@
-# trabalhomobile
+# Water Control
 
-A new flutter module project.
+Projeto desenvolvido para estudo do framework Flutter para as disciplinas de Desenvolvimento Mobile e Engenharia de software.
 
-## Getting Started
+## Integrantes do grupo:
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.dev/).
+- Diego Souza
+- Hermes Guimarães
+- Hugo Oliveira
+- Juliana Parreira
+- Kamilah Santos
+- Marco Aurélio
 
-For instructions integrating Flutter modules to your existing applications,
-see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
+[Prototipo do projeto](https://www.figma.com/file/cGoahOPy753t5woJ3wL2Il/Trabalho-DM?node-id=0%3A1)
