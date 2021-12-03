@@ -32,10 +32,10 @@ class _LoginPageState extends State<LoginPage> {
                   'Water Control',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400),
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontFamily: 'Comfortaa',
+                  ),
                 ),
               ),
               Container(

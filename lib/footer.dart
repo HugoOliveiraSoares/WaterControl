@@ -28,7 +28,7 @@ class Footer {
                 size: 30,
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.HOME);
+                Navigator.of(context).pushReplacementNamed(Routes.HOME);
               },
             ),
             label: 'Principal'),
